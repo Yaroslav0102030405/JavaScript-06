@@ -22,25 +22,25 @@
 /*
 * Операция rest... распыление
 */
-const numbers = [100, ...[1, 2, 3], 300, ...[4, 5, 6], 500, ...[7, 8, 9], 700];
+// const numbers = [100, ...[1, 2, 3], 300, ...[4, 5, 6], 500, ...[7, 8, 9], 700];
 // распыление берет калекцию и распаковыввает ее в другую коллекцию это аналог канкат
 // очень удобно если нужно поставить эелемент в разные места будут тут обьекты поставить обьекты будут строки поставит строки
 // если там стоять примитивы то делает копии если там лежат сложные типы обьекты или массивы то ставит там ссылку на них
 // синтаксис у рест и спред одинаковый это три точки
 // в зависимости от того где мы их поставим будет операция или распыление или збора
 
-console.log(numbers);
+// console.log(numbers);
 
-/*
-* Поиск самой маленькой или большой температуры (числа)
-*/
-const temps = [18, 14, 12, 21, 17, 29, 24];
+// /*
+// * Поиск самой маленькой или большой температуры (числа)
+// */
+// const temps = [18, 14, 12, 21, 17, 29, 24];
 
-console.log(Math.max(1, 4, 17, 5, 6));
+// console.log(Math.max(1, 4, 17, 5, 6));
 
-// console.log(Math.min(temps)) тут ничего не будет потому что Math.max ожидает что будет независимый набор аргументов
-// не один массив аргументов а набор он в массиве искать не умеет только ищет в аргументах
-console.log(Math.min(...temps));
+// // console.log(Math.min(temps)) тут ничего не будет потому что Math.max ожидает что будет независимый набор аргументов
+// // не один массив аргументов а набор он в массиве искать не умеет только ищет в аргументах
+// console.log(Math.min(...temps));
 //  когда ты применяешь распыление ты можешь распылить при передаче аргумента в фукнции
 // операция spread (распыление) не деструктивная с этим массивом ничего не происходит
 // делается копия его элементов
@@ -71,13 +71,13 @@ console.log(Math.min(...temps));
 /*
 * Сшиваем несколько массивов в один через spread
 */
-const lastWeekTemps = [1, 2, 3];
-const currentTemps = [4, 5, 6];
-const nwxtWeekTemps = [7, 8, 9];
+// const lastWeekTemps = [1, 2, 3];
+// const currentTemps = [4, 5, 6];
+// const nwxtWeekTemps = [7, 8, 9];
 
-const allTemps = [...lastWeekTemps, ...currentTemps, ...nwxtWeekTemps];
+// const allTemps = [...lastWeekTemps, ...currentTemps, ...nwxtWeekTemps];
 
-console.log(allTemps);
+// console.log(allTemps);
 
 /*
 * Распыление обьектов
@@ -427,37 +427,37 @@ console.log(allTemps);
 // Тут понятно и читабелен код это и есть паттерн обьект настроек
 // Когда применятеся паттерн обьект настроект? Когда у вашей функции 3 или больше аргументов
 
-const showProfileInfo = function (userProfile) {
-  // console.log(userProfile)
-      // функция получает этот обьект и в будущем как-то будет с ним работать
-      // Эта функция будет использовать свойства с этого обьекта name, tag, location
-      // И вы хотите в этой функции деструктуризировать эти свойства в ее локальной переменной
-  const {
-    name,
-    tag,
-    location,
-    avatar,
-    stats: { followers, views, likes },
-  } = userProfile;
-      // Это пример деструктуризации в теле функции и кто-то делает именно так
-      // Или деструктеризация может быть проведена прямо в подписи функции
-  console.log(name, tag, location, avatar, followers, views, likes);
-};
-// Свойства должны называться так как хочет функция чтоб вашем обьекте они назывались это в документации можно посмотреть.
+// const showProfileInfo = function (userProfile) {
+//   // console.log(userProfile)
+//       // функция получает этот обьект и в будущем как-то будет с ним работать
+//       // Эта функция будет использовать свойства с этого обьекта name, tag, location
+//       // И вы хотите в этой функции деструктуризировать эти свойства в ее локальной переменной
+//   const {
+//     name,
+//     tag,
+//     location,
+//     avatar,
+//     stats: { followers, views, likes },
+//   } = userProfile;
+//       // Это пример деструктуризации в теле функции и кто-то делает именно так
+//       // Или деструктеризация может быть проведена прямо в подписи функции
+//   console.log(name, tag, location, avatar, followers, views, likes);
+// };
+// // Свойства должны называться так как хочет функция чтоб вашем обьекте они назывались это в документации можно посмотреть.
 
-const profile = {
-  name: 'Jacques Gluke',
-  tag: 'jgluke',
-  location: 'Ocho Rios, Jamaica',
-  avatar: 'https: фото',
-  stats: {
-    followers: 5603,
-    views: 4827,
-    likes: 1308,
-  },
-};
+// const profile = {
+//   name: 'Jacques Gluke',
+//   tag: 'jgluke',
+//   location: 'Ocho Rios, Jamaica',
+//   avatar: 'https: фото',
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
 
-showProfileInfo(profile);
+// showProfileInfo(profile);
 // мы кинули сюда обьект с подписанными свойствами
 
 /*
@@ -521,3 +521,37 @@ showProfileInfo(profile);
 // cart.add({ name: 'strawberry', price: 110 });
 
 // cart.remove('apple');
+
+const lastWeekTemps = [1, 2, 3]
+const currentTemps = [4, 5, 6]
+const nextWeekTemps = [7, 8, 9]
+
+const allTemps = [...lastWeekTemps, ...currentTemps, ...nextWeekTemps]
+
+console.log(allTemps)
+
+const a = { x: 1, y: 2, g: { hello: 'Wodr' }}
+const b = { x: 2, z: 0 }
+
+
+const c = {... a, ...b}
+
+console.log(c)
+
+const defaultSetting = {
+  theme: 'light',
+  showNotifications: true,
+  hideSidebar: false,
+}
+
+const userSetting = {
+  showNotifications: false,
+  hideSidebar: true,
+}
+
+const finalSetting = {
+  ...defaultSetting,
+  ...userSetting,
+}
+
+console.log(finalSetting)
