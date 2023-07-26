@@ -522,36 +522,183 @@
 
 // cart.remove('apple');
 
-const lastWeekTemps = [1, 2, 3]
-const currentTemps = [4, 5, 6]
-const nextWeekTemps = [7, 8, 9]
+// const lastWeekTemps = [1, 2, 3]
+// const currentTemps = [4, 5, 6]
+// const nextWeekTemps = [7, 8, 9]
 
-const allTemps = [...lastWeekTemps, ...currentTemps, ...nextWeekTemps]
+// const allTemps = [...lastWeekTemps, ...currentTemps, ...nextWeekTemps]
 
-console.log(allTemps)
+// console.log(allTemps)
 
-const a = { x: 1, y: 2, g: { hello: 'Wodr' }}
-const b = { x: 2, z: 0 }
+// const a = { x: 1, y: 2, g: { hello: 'Wodr' }}
+// const b = { x: 2, z: 0 }
 
 
-const c = {... a, ...b}
+// const c = {... a, ...b}
 
-console.log(c)
+// console.log(c)
 
-const defaultSetting = {
-  theme: 'light',
-  showNotifications: true,
-  hideSidebar: false,
-}
+// const defaultSetting = {
+//   theme: 'light',
+//   showNotifications: true,
+//   hideSidebar: false,
+// }
 
-const userSetting = {
-  showNotifications: false,
-  hideSidebar: true,
-}
+// const userSetting = {
+//   showNotifications: false,
+//   hideSidebar: true,
+// }
 
-const finalSetting = {
-  ...defaultSetting,
-  ...userSetting,
-}
+// const finalSetting = {
+//   ...defaultSetting,
+//   ...userSetting,
+// }
 
-console.log(finalSetting)
+// console.log(finalSetting)
+
+// Деструктуризация обьекта - распаковка применяэться для разархивирование обьекта
+
+
+// const playList = {
+//   name: 'Мой супер плейлист',
+//   rating: 5,
+//   tracks: ['Трек-1', 'Трек-2', 'Трек-3'],
+//   trackCount: 3,
+// }
+
+// // Операция деструктуризация применя.ться чтобы работать со значениями
+// // const { name, rating, tracks, trackCount } = playList
+
+// // если нужно присвоить значение по умолчанию вы пишете сначала новое ствойство ставите = и значение
+// // изменить название переменной после : написать новое
+// const { name, rating, tracks, trackCount: newCount = 0, author = 'Николай' } = playList
+
+// // tracks.push('Трек-4')
+
+// // console.log(tracks)
+
+// console.log(name, rating, tracks, newCount, author)
+
+// Пример обьект и внуть вложен еще один обьект
+// const profile = {
+//   name: 'Jacques Gluke',
+//   tag: 'jqluke',
+//   location: 'Ocho Rios, Jamaica',
+//   avatar: 'https://adme.media/tvorchestvo-fotografy/20-rasslablyayuschih-foto-na-kotoryh-minimum-detalej-i-maksimum-smysla-1856565/',
+//   stats: {
+//     tollowers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+
+// // Это называеться глубокая деструктуризация
+// const {name, tag, location, avatar, stats: {tollowers, views, likes}, } = profile
+
+// console.log(name, tag, location, avatar, tollowers, views, likes)
+
+// Деструктуризация массивов
+// const rgb =  [255, 80, 130]
+
+// const [a, b, c] = rgb
+
+// console.log(a, b, c)
+
+// если нужно пропустить какое-то значение
+// const rgb =  [255, 80, 130]
+
+// const [a, , c] = rgb
+
+// console.log(a, c)
+
+// const author = {
+//   mango: 1,
+//   kiwi: 2,
+//   poly: 3,
+//   ajax: 4,
+// }
+
+// const entries = Object.entries(author)
+
+// for (const entry of entries) {
+//   const [name, rating] = entry
+
+//   console.log(name, rating)
+// }
+
+// Операция рест - сбор
+//  const profile = {
+//     name: 'Jacques Gluke',
+//     tag: 'jqluke',
+//     location: 'Ocho Rios, Jamaica',
+//     avatar: 'https://adme.media/tvorchestvo-fotografy/20-rasslablyayuschih-foto-na-kotoryh-minimum-detalej-i-maksimum-smysla-1856565/',
+//     stats: {
+//       tollowers: 5603,
+//       views: 4827,
+//       likes: 1308,
+//     },
+//   };
+
+//   const {name, tag, location, ...restProps} = profile
+
+//   console.log(name, tag, location)
+//   console.log(restProps)
+
+// Как передовать обьекты в функцию
+// Часто вы будете получать в свои функции один обьект - это паттерн обьект настроек
+// если у вас 4 аргумента то стоит делать паттерн
+// const fn = function (params) {
+//   return params
+// }
+
+// console.log(fn({
+//   age: 10,
+//   frisnds: 5,
+//   isOnline: true,
+//   hobbies: [],
+//   games: {},
+//   rating: 6,
+// }))
+
+
+const profile = {
+  name: 'Jacques Gluke',
+  tag: 'jqluke',
+  location: 'Ocho Rios, Jamaica',
+  avatar: 'https://www.google.com/search?sxsrf=AB5stBiby37Kb3IBfnoJ7TaKgG9c-qg5yw:1690363108582&q=%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D0%B0&tbm=isch&source=lnms&sa=X&ved=2ahUKEwj2joOlhayAAxWtCBAIHfKmCKIQ0pQJegQIDBAB&biw=1536&bih=747&dpr=1.25#imgrc=R0oKC-2-Ec6wMM',
+  stats: {
+    followers: 5603,
+    views: 4827,
+    likes: 1308,
+  },
+};
+
+// const showProfileInfo = function (userProfile) {
+//   const {name, tag, location, avatar, stats: {tollowers, views, likes}} = userProfile;
+//   console.log(name, tag, location, avatar, tollowers, views, likes)
+//   }
+
+
+// showProfileInfo(profile)
+
+const makeProfileMarkup = function (userProfile) {
+  const {name, tag, location, avatar, stats: {followers, views, likes}} = userProfile
+
+  return `<div>
+<img src="${avatar}" alt="user avatar">
+<p>${name}<span>@${tag}</span></p>
+<p>${location}</p>
+<ul>
+<li>Followes: ${followers}</li>
+<li>Views: ${views}</li>
+<li>Likes: ${likes}</li>
+</ul>
+  </div>`
+};
+
+const markup = makeProfileMarkup(profile)
+console.log(markup)
+
+document.body.insertAdjacentHTML('afterbegin', markup)
+
+
